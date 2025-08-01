@@ -21,6 +21,10 @@ const router = createBrowserRouter([
         element: <AllSupplier />,
       },
       {
+        path: "/AllSupplier",
+        element: <AllSupplier />
+      },
+      {
         path: "/AddSupplier",
         element:<AddSupplier />,
       },

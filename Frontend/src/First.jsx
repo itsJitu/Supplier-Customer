@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import "./First.css";
 import SupplierLogo from "./images/Suppliergroup.png";
+import { MdWarehouse } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -25,7 +26,8 @@ function First() {
         <div className="sidebar">
           <div className="sidebar-header" onClick={handleImageClick}>
             <div className="sidebar-logo-text">
-              <img src={SupplierLogo} alt="SupplierLogo" className="supplier-logo" />
+              {/* <img src={SupplierLogo} alt="SupplierLogo" className="supplier-logo" /> */}
+              <MdWarehouse className="supplier-logo"/>
               <span className="supplier-title">Supplier</span>
             </div>
             <IoIosArrowForward className={showDropdown ? "arrow-icon rotate" : "arrow-icon"} />
