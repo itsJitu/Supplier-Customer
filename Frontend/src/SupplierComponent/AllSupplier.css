@@ -54,7 +54,6 @@ h3 {
 }
 
 .search {
-    
     background-color: #ffffff;
     display: flex;
     align-items: center;
@@ -63,8 +62,14 @@ h3 {
     border-radius: 8px;
 }
 
-.select {
-    padding: 20px 15px;
-    background-color: #ffffff;
+.select-category {
     border-radius: 8px;
+    margin-right: 10px;
+}
+
+select {
+    padding: 20px 25px;
+    border-radius: 8px;
+    border-color: #E6E6E6;
+    margin-right: 10px;
 }

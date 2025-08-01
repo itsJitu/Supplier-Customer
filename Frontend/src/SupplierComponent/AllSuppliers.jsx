@@ -65,7 +65,7 @@ function AllSuppliers() {
             <input type="search" placeholder="Search" style={{border: "none"}}/>
           </div>
           {/* Category */}
-          <div className="select">
+          <div className="select-category">
             <select name="" id="" >
               <option value="" >Select Category</option>
             </select>
