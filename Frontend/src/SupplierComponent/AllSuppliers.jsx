@@ -349,6 +349,7 @@ function AllSuppliers() {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   );

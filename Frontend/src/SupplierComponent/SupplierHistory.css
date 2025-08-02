@@ -1,0 +1,150 @@
+.supplier-history-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.supplier-history-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-tabs button {
+  padding: 6px 14px;
+  border: none;
+  background-color: transparent;
+  color: #262626;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filter-tabs button:hover,
+.filter-tabs button.active {
+  background-color: #f5f5f5;
+}
+
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.warehouse-select-wrapper {
+  width: 180px;
+}
+
+.warehouse-select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #262626;
+  appearance: none;
+}
+
+.search-input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+  font-size: 14px;
+  width: 200px;
+}
+
+.supplier-history-table-container {
+  overflow-x: auto;
+}
+
+.supplier-history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.supplier-history-table th,
+.supplier-history-table td {
+  border: none; /* Remove all borders */
+  border-bottom: 1px solid #ddd; /* Add only bottom border */
+  padding: 8px;
+  text-align: left;
+}
+
+.supplier-history-table th {
+  background-color: #f2f2f2;
+}
+
+.product-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.stock-in {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.stock-out {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.supplier-history-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.pagination-box {
+  padding: 6px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-arrow {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 8px;
+}
+
+.pagination-arrow:disabled {
+  cursor: not-allowed;
+  color: #ccc;
+}
