@@ -4,10 +4,11 @@ import { IoIosArrowForward } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { IoFilter } from "react-icons/io5";
 import { LuArrowUpDown } from "react-icons/lu";
+import PopUp from "./PopUp.jsx";
 
 function SupplierHistory() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 25; // Updated to match the image (25 per page)
+  const itemsPerPage = 25;
   const totalItems = 721;
 
   const data = [
@@ -96,11 +97,53 @@ function SupplierHistory() {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
-  const currentData = data.slice(0, itemsPerPage); // Limit to itemsPerPage for the first page
+  const currentData = data.slice(0, itemsPerPage);
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupData, setPopupData] = useState(null);
+
+  const handlePopup = (item) => {
+    setPopupData({
+      referenceNo: "123789",
+      date: "29/07/2025",
+      supplier: "Reliance - Mumbai",
+      destination: "WH-009",
+      products: [
+        {
+          name: "Color -> Green -> S",
+          sku: "CG00192T",
+          quantity: 24,
+          unitPrice: 5000,
+          totalPrice: 5000,
+        },
+        {
+          name: "Color -> Green -> M",
+          sku: "CG00192T",
+          quantity: 24,
+          unitPrice: 5000,
+          totalPrice: 5000,
+        },
+        {
+          name: "Color -> Red -> XL",
+          sku: "CG00183T",
+          quantity: 42,
+          unitPrice: 5000,
+          totalPrice: 5000,
+        },
+      ],
+      subtotal: 15000,
+      shippingCharges: 3000,
+      totalPrice: 17000,
+      paymentMethod: "Net Banking",
+      courierPartner: "Shippocket",
+      arrivalTime: "13:45 PM",
+    });
+    setShowPopup(true);
+  };
 
   return (
     <div className="supplier-history-container">
-      <div style={{display: 'flex', justifyContent: "space-between"}}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className="breadcrumb">
           <span style={{ color: "#676767" }}>Supplier</span>
           <span style={{ margin: "0 8px", color: "#676767" }}>
@@ -131,20 +174,40 @@ function SupplierHistory() {
         </div>
 
         {/* search & filter icon arrow up & down icon*/}
-        <div  style={{display: 'flex'}}>
-          <div style={{border: "1px solid #E6E6E6", backgroundColor: "#FFFFFF", borderRadius: "4px", padding: '10px', gap:"4px"}}>
-            <span><CiSearch /></span>
-            <span><IoFilter /></span>
+        <div style={{ display: "flex" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              border: "1px solid #E6E6E6",
+              backgroundColor: "#FFFFFF",
+              borderRadius: "6px",
+              padding: "10px",
+              gap: "10px",
+            }}
+          >
+            <span>
+              <CiSearch />
+            </span>
+            <span>
+              <IoFilter />
+            </span>
           </div>
-          
+
           {/* up & down icon */}
-          <div>
-            <span><LuArrowUpDown />
-</span>
+          <div
+            style={{
+              border: "1px solid #E6E6E6",
+              backgroundColor: "#FFFFFF",
+              borderRadius: "6px",
+              padding: "10px",
+            }}
+          >
+            <span>
+              <LuArrowUpDown />
+            </span>
           </div>
-
         </div>
-
       </div>
 
       <div className="supplier-history-table-container">
@@ -164,7 +227,7 @@ function SupplierHistory() {
           </thead>
           <tbody>
             {currentData.map((item, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={() => handlePopup(item)}>
                 <td>
                   <input type="checkbox" />
                 </td>
@@ -220,6 +283,10 @@ function SupplierHistory() {
           </div>
         </div>
       </div>
+
+      {showPopup && popupData && (
+        <PopUp data={popupData} onClose={() => setShowPopup(false)} />
+      )}
     </div>
   );
 }
