@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowLeft } from "react-icons/md";
@@ -6,6 +6,7 @@ import { FaPlus } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { IoFilter } from "react-icons/io5";
 import { LuArrowUpDown } from "react-icons/lu";
+import { FaExclamationTriangle } from "react-icons/fa";
 import "./AllCustomers.css";
 import { Link } from "react-router-dom";
 
@@ -93,13 +94,23 @@ const customers = [
 ];
 
 function AllCustomers() {
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCustomerClick = (customer) => {
+    setSelectedCustomer(customer);
+    setShowModal(true);
+  };
+
   return (
     <div className="all-customers">
       <div className="breadcrumb">
         <div>All Customers</div>
 
         <div style={{ gap: "16px", display: "flex" }}>
-          <Link to="/AddCustomer" className="add-btn">+ Add New Customer</Link>
+          <Link to="/AddCustomer" className="add-btn">
+            + Add New Customer
+          </Link>
           <select className="create-btn">
             <option value="">Create</option>
             <option value="">Create Sales</option>
@@ -161,7 +172,11 @@ function AllCustomers() {
         </thead>
         <tbody>
           {customers.map((cust, i) => (
-            <tr key={cust.id}>
+            <tr
+              key={cust.id}
+              onClick={() => handleCustomerClick(cust)}
+              style={{ cursor: "pointer" }}
+            >
               <td>
                 <input type="checkbox" />
               </td>
@@ -198,6 +213,97 @@ function AllCustomers() {
           </button>
         </div>
       </div>
+
+      {/* Pop Up data */}
+      {showModal && selectedCustomer && (
+        <div className="modal-overlay">
+          <div className="modal-popup">
+            <div className="modal-header">
+              <span>All Customers</span> <IoIosArrowForward />{" "}
+              <strong>{selectedCustomer.name}</strong>
+            </div>
+
+            <div className="modal-stats">
+              <div className="stat-card">
+                <p>Total Spent</p>
+                <h3>₹ 175,489</h3>
+              </div>
+              <div className="stat-card">
+                <p>Order</p>
+                <h3>6</h3>
+              </div>
+              <div className="stat-card">
+                <p>Initial Purchase Date</p>
+                <h3>2/09/2023</h3>
+              </div>
+              <div className="stat-card">
+                <FaExclamationTriangle  style={{color:'#007aff', backgroundColor:'#f5f6fa'}}/>
+                <p>Dues Amount</p>
+                <h3>₹ 75,489</h3>
+              </div>
+            </div>
+
+            <div className="modal-details">
+              <div className="profile-box">
+                <h4>User Profile</h4>
+                <p>
+                  <strong>Name:</strong> {selectedCustomer.name}
+                </p>
+                <p>
+                  <strong>Address:</strong> {selectedCustomer.address}
+                </p>
+                <p>
+                  <strong>Phone No.:</strong> {selectedCustomer.contact}
+                </p>
+              </div>
+
+              <div className="orders-box">
+                <h4
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  Recent Orders <span>12/09/2025</span>
+                </h4>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>
+                        <input type="checkbox" />
+                      </th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="checkbox" />
+                      </td>
+                      <td>🦽 Wheel Chair</td>
+                      <td>10</td>
+                      <td>₹ 50,000.00</td>
+                    </tr>
+                    {[...Array(5)].map((_, i) => (
+                      <tr key={i}>
+                        <td>
+                          <input type="checkbox" />
+                        </td>
+                        <td>💺 Office Chair</td>
+                        <td>5</td>
+                        <td>₹ 25,000.00</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="modal-footer">
+              <button onClick={() => setShowModal(false)}>Close</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

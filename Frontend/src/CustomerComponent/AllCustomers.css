@@ -49,7 +49,7 @@
     background-color: #1368EC;
     color: #ffffff;
     border: 1px solid #1450AE;
-    padding: 8px 16px;
+    padding: 8px 8px;
     font-weight: bold;
     border-radius: 6px;
 }
@@ -91,3 +91,103 @@
   padding: 4px 8px;
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-popup {
+  background-color: white;
+  width: 90%;
+  max-width: 1000px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.modal-header {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 180px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-card p {
+  color: #888;
+  font-size: 14px;
+}
+
+.stat-card h3 {
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+.modal-details {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.profile-box,
+.orders-box {
+  flex: 1;
+  min-width: 300px;
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.orders-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.orders-box th,
+.orders-box td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer button {
+  background-color: #262626;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
