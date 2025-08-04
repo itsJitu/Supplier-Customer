@@ -83,7 +83,7 @@ function AddSupplier() {
               <span>Supplier Code </span>
               <br />
               <div className="input-btn">
-                <input type="text" style={{ border: "none" }} />
+                <input type="text" style={{ border: "none", backgroundColor:'#fbfbfb' }} />
                 <button
                   style={{
                     color: "white",
@@ -204,7 +204,7 @@ function AddSupplier() {
               <div className="state">
                 <span>State</span>
                 <br />
-                <select className="input-common" defaultValue="">
+                <select className="input-common" defaultValue="" >
                   <option value="" disabled>
                     Select State
                   </option>
@@ -273,7 +273,7 @@ function AddSupplier() {
               marginTop: "20px",
             }}
           >
-            <span style={{ fontWeight: "500", fontSize: "16px" }}>
+            <span style={{ fontWeight: "500", fontSize: "16px"}}>
               Banking Details
             </span>
 
@@ -309,7 +309,7 @@ function AddSupplier() {
               className="account-ifsc-branch"
               style={{ display: "flex", gap: "20px", marginTop: "15px" }}
             >
-              <div className="account-number" style={{ flex: 1 }}>
+              <div className="account-number" style={{ flex: 1, backgroundColor: "#fbfbfb" }}>
                 <span>Account Number</span>
                 <br />
                 <input
@@ -319,7 +319,7 @@ function AddSupplier() {
                 />
               </div>
 
-              <div className="ifsc-code" style={{ flex: 1 }}>
+              <div className="ifsc-code" style={{ flex: 1, backgroundColor: "#fbfbfb" }}>
                 <span>IFSC Code</span>
                 <br />
                 <input
@@ -329,7 +329,7 @@ function AddSupplier() {
                 />
               </div>
 
-              <div className="branch" style={{ flex: 1 }}>
+              <div className="branch" style={{ flex: 1, backgroundColor: "#fbfbfb" }}>
                 <span>Branch</span>
                 <br />
                 <input

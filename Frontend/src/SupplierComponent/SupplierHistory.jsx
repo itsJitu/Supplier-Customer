@@ -4,6 +4,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { IoFilter } from "react-icons/io5";
 import { LuArrowUpDown } from "react-icons/lu";
+import { FaAngleLeft } from "react-icons/fa6";
+import { FaChevronRight } from "react-icons/fa"
 import PopUp from "./PopUp.jsx";
 
 function SupplierHistory() {
@@ -144,7 +146,7 @@ function SupplierHistory() {
   return (
     <div className="supplier-history-container">
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div className="breadcrumb">
+        <div className="breadcrumb-history">
           <span style={{ color: "#676767" }}>Supplier</span>
           <span style={{ margin: "0 8px", color: "#676767" }}>
             <IoIosArrowForward />
@@ -213,7 +215,7 @@ function SupplierHistory() {
       <div className="supplier-history-table-container">
         <table className="supplier-history-table">
           <thead>
-            <tr>
+            <tr style={{ backgroundColor: "#F5F5F5" }}>
               <th>
                 <input type="checkbox" />
               </th>
@@ -259,26 +261,30 @@ function SupplierHistory() {
           </tbody>
         </table>
 
-        <div className="supplier-history-pagination">
-          <div className="pagination-box">25 per page</div>
-          <div className="pagination-info">
+        {/* pagination */}
+
+        <div className="pagination">
+          <div className="pagination-boxx">{itemsPerPage} per page</div>
+          <div className="pagination-boxx pagination-info">
             <span>
-              {startIndex + 1}-{endIndex} of {totalItems}
+              {startIndex + 1}-{Math.min(endIndex, totalItems)} of {totalItems}
             </span>
-            <span style={{ color: "grey", margin: "0 8px" }}>|</span>
+            <span style={{ color: "grey" }}> | </span>
             <button
               disabled={currentPage === 1}
-              onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               className="pagination-arrow"
             >
-              &lt;
+              <FaAngleLeft />
             </button>
             <button
               disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+              }
               className="pagination-arrow"
             >
-              &gt;
+              <FaChevronRight />
             </button>
           </div>
         </div>
