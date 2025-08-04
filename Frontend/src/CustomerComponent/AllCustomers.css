@@ -152,15 +152,18 @@
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  background-color: #f7f7f7;
 }
 
 .profile-box,
 .orders-box {
   flex: 1;
   min-width: 300px;
-  background: #f9f9f9;
+  background: #ffffff;
   padding: 16px;
   border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .orders-box table {

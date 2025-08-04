@@ -1,6 +1,6 @@
 import React from "react";
 import "./AllSupplier.css";
-import MoneyBag from "../images/MoneyBag.png";
+import Radio from "../images/MoneyBag.png";
 import RadioActive from "../images/Radioactive.png";
 import CircleLogo from "../images/Circlelogo.png";
 import { FaSearch } from "react-icons/fa";
@@ -113,20 +113,7 @@ function AllSuppliers() {
         {/* Three-Box */}
         <div className="three-box">
           {/* All Parties */}
-          <div className="money-bag">
-            <div>
-              <img src={MoneyBag} alt="money" />
-            </div>
-            <div className="bag-content">
-              <span style={{ color: "#676767", marginTop: "50px" }}>
-                All Parties
-              </span>
-              <br />
-              <span style={{ textAlign: "left" }}>
-                <b>14</b>
-              </span>
-            </div>
-          </div>
+           
 
           {/* To Receive */}
           <div className="radio-active">
@@ -151,7 +138,7 @@ function AllSuppliers() {
             </div>
             <div className="bag-content">
               <span style={{ color: "#676767", marginTop: "50px" }}>
-                To Pay{" "}
+                To Pay
               </span>
               <br />
               <span style={{ textAlign: "left" }}>

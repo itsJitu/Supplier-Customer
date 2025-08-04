@@ -6,7 +6,9 @@ import { FaPlus } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { IoFilter } from "react-icons/io5";
 import { LuArrowUpDown } from "react-icons/lu";
-import { FaExclamationTriangle } from "react-icons/fa";
+import RadioActive from "../images/Radioactive.png";
+import CircleLogo from "../images/Circlelogo.png";
+import { FaUser } from "react-icons/fa";
 import "./AllCustomers.css";
 import { Link } from "react-router-dom";
 
@@ -223,40 +225,97 @@ function AllCustomers() {
               <strong>{selectedCustomer.name}</strong>
             </div>
 
-            <div className="modal-stats">
-              <div className="stat-card">
-                <p>Total Spent</p>
-                <h3>₹ 175,489</h3>
+            {/* pop up */}
+
+            <div className="three-box">
+              {/*total spent */}
+              <div className="radio-active">
+                <div>
+                  <img src={RadioActive} alt="money" />
+                </div>
+                <div className="bag-content">
+                  <span style={{ color: "#676767", marginTop: "50px" }}>
+                    Total Spent
+                  </span>
+                  <br />
+                  <span style={{ textAlign: "left" }}>
+                    <b>₹12,75,987</b>
+                  </span>
+                </div>
               </div>
-              <div className="stat-card">
-                <p>Order</p>
-                <h3>6</h3>
+
+              {/* order */}
+              <div className="radio-active">
+                <div>
+                  <img src={CircleLogo} alt="money" />
+                </div>
+                <div className="bag-content">
+                  <span style={{ color: "#676767", marginTop: "50px" }}>
+                    Order
+                  </span>
+                  <br />
+                  <span style={{ textAlign: "left" }}>
+                    <b>₹5,987</b>
+                  </span>
+                </div>
               </div>
-              <div className="stat-card">
-                <p>Initial Purchase Date</p>
-                <h3>2/09/2023</h3>
+
+              {/* Initial Purchase Date */}
+               <div className="radio-active">
+                <div>
+                  <img src={CircleLogo} alt="money" />
+                </div>
+                <div className="bag-content">
+                  <span style={{ color: "#676767", marginTop: "50px" }}>
+                    Order
+                  </span>
+                  <br />
+                  <span style={{ textAlign: "left" }}>
+                    <b>₹5,987</b>
+                  </span>
+                </div>
               </div>
-              <div className="stat-card">
-                <FaExclamationTriangle
-                  style={{ color: "#007aff", backgroundColor: "#f5f6fa" }}
-                />
-                <p>Dues Amount</p>
-                <h3>₹ 75,489</h3>
+
+              {/*Dues Amount */}
+              <div className="radio-activs" style={{display:'flex', gap: '16px'}}>
+                <div>
+                  <img src={RadioActive} alt="money" />
+                </div>
+
+                <div className="bag-content">
+                  <span
+                    style={{
+                      color: "#676767",
+                      marginTop: "50px",
+                      border: "none",
+                    }}
+                  >
+                    Dues Amount
+                  </span>
+                  <br />
+                  <span style={{ textAlign: "left" }}>
+                    <b>₹12,75,987</b>
+                  </span>
+                </div>
               </div>
             </div>
-
+            {/* User Profile */}
             <div className="modal-details">
               <div className="profile-box">
                 <h4>User Profile</h4>
                 <p>
-                  <strong>Name:</strong> {selectedCustomer.name}
+                  <strong>Name:<FaUser />
+</strong> {selectedCustomer.name}
                 </p>
-                <p>
+
+                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                  <p>
                   <strong>Address:</strong> {selectedCustomer.address}
                 </p>
                 <p>
                   <strong>Phone No.:</strong> {selectedCustomer.contact}
                 </p>
+                </div>
               </div>
 
               <div className="orders-box">
@@ -267,7 +326,7 @@ function AllCustomers() {
                 </h4>
                 <table>
                   <thead>
-                    <tr>
+                    <tr style={{ backgroundColor: "#e6e6e6" }}>
                       <th>
                         <input type="checkbox" />
                       </th>
