@@ -320,7 +320,7 @@ function AllCustomers() {
 
               <div className="orders-box">
                 <h4
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  style={{ display: "flex", justifyContent: "space-between", color: '#676767'}}
                 >
                   Recent Orders <span>12/09/2025</span>
                 </h4>
