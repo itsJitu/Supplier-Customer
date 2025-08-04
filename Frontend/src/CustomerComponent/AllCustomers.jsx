@@ -237,7 +237,9 @@ function AllCustomers() {
                 <h3>2/09/2023</h3>
               </div>
               <div className="stat-card">
-                <FaExclamationTriangle  style={{color:'#007aff', backgroundColor:'#f5f6fa'}}/>
+                <FaExclamationTriangle
+                  style={{ color: "#007aff", backgroundColor: "#f5f6fa" }}
+                />
                 <p>Dues Amount</p>
                 <h3>₹ 75,489</h3>
               </div>

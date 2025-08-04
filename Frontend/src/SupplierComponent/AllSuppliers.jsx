@@ -4,9 +4,9 @@ import MoneyBag from "../images/MoneyBag.png";
 import RadioActive from "../images/Radioactive.png";
 import CircleLogo from "../images/Circlelogo.png";
 import { FaSearch } from "react-icons/fa";
-import { IoSearch } from "react-icons/io5";
-import { CgSortAz } from "react-icons/cg";
-import { TbArrowsSort } from "react-icons/tb";
+import { CiSearch } from "react-icons/ci";
+import { IoFilter } from "react-icons/io5";
+import { LuArrowUpDown } from "react-icons/lu";
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
@@ -99,7 +99,14 @@ function AllSuppliers() {
   return (
     <div className="all-supplier-container">
       <div className="supplier-header">
-        <Link to="/" style={{ textDecoration: "none", color: "#676767", marginBottom:'20px' }}>
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            color: "#676767",
+            marginBottom: "20px",
+          }}
+        >
           Supplier
         </Link>
 
@@ -184,7 +191,7 @@ function AllSuppliers() {
                     borderRadius: "8px",
                     padding: "10px 20px",
                     textAlign: "left", // ensures text is aligned left
-                    direction: "ltr", // ensures LTR rendering
+                    direction: "ltr",
                     width: "200px", // optional: fixed width
                     outline: "none",
                   }}
@@ -237,7 +244,6 @@ function AllSuppliers() {
                       outline: "none",
                       backgroundColor: "white",
                       color: "#333",
-                      width: "200px", // optional
                     }}
                   >
                     <option value="">Select warehouse</option>
@@ -245,21 +251,44 @@ function AllSuppliers() {
                 </div>
               </div>
 
-              <div className="toolbar-actions-th">
+              <div className="toolbar-actions-th" style={{justifyContent:'space-between', alignItems:'center'}}>
                 <div className="toolbar-titles">
                   <button className="toolbar-filter-btn">All</button>
                 </div>
 
-                <div className="toolbar-action" style={{ marginTop: "4px" }}>
-                  <button className="icon-btn ">
-                    <IoSearch />
-                  </button>
-                  <button className="icon-btn">
-                    <CgSortAz />
-                  </button>
-                  <button className="icon-btn">
-                    <TbArrowsSort />
-                  </button>
+                <div style={{ display: "flex", gap: "16px",marginTop: "10px",marginBottom: "10px", padding:'0px 20px' }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      border: "1px solid #E6E6E6",
+                      backgroundColor: "#FFFFFF",
+                      borderRadius: "6px",
+                      padding: "10px",
+                      gap: "10px",
+                    }}
+                  >
+                    <span>
+                      <CiSearch />
+                    </span>
+                    <span>
+                      <IoFilter />
+                    </span>
+                  </div>
+
+                  {/* up & down icon */}
+                  <div
+                    style={{
+                      border: "1px solid #E6E6E6",
+                      backgroundColor: "#FFFFFF",
+                      borderRadius: "6px",
+                      padding: "10px",
+                    }}
+                  >
+                    <span>
+                      <LuArrowUpDown />
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -349,7 +378,6 @@ function AllSuppliers() {
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
