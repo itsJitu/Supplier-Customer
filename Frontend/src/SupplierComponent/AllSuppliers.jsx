@@ -99,7 +99,7 @@ function AllSuppliers() {
   return (
     <div className="all-supplier-container">
       <div className="supplier-header">
-        <Link to="/" style={{ textDecoration: "none", color: "#676767" }}>
+        <Link to="/" style={{ textDecoration: "none", color: "#676767", marginBottom:'20px' }}>
           Supplier
         </Link>
 
