@@ -113,7 +113,20 @@ function AllSuppliers() {
         {/* Three-Box */}
         <div className="three-box">
           {/* All Parties */}
-           
+           <div className="radio-active">
+            <div>
+              <img src={RadioActive} alt="money" />
+            </div>
+            <div className="bag-content">
+              <span style={{ color: "#676767", marginTop: "50px" }}>
+                All Parties
+              </span>
+              <br />
+              <span style={{ textAlign: "left" }}>
+                <b>14</b>
+              </span>
+            </div>
+          </div>
 
           {/* To Receive */}
           <div className="radio-active">

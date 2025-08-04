@@ -326,7 +326,7 @@ function AllCustomers() {
                 </h4>
                 <table>
                   <thead>
-                    <tr style={{ backgroundColor: "#e6e6e6" }}>
+                    <tr style={{ backgroundColor: "#e6e6e6", color:'#676767' }}>
                       <th>
                         <input type="checkbox" />
                       </th>
@@ -335,7 +335,7 @@ function AllCustomers() {
                       <th>Total</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody style={{color: '#676767'}}>
                     <tr>
                       <td>
                         <input type="checkbox" />
