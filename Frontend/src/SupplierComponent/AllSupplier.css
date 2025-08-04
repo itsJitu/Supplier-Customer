@@ -155,9 +155,6 @@ h3 {
   cursor: pointer;
 }
 
-.icon-btn-filter {
-  
-}
 
 /* ========== TABLE SECTION ========== */
 
@@ -171,6 +168,7 @@ h3 {
     background-color: #e6e6e6;
     border-radius: 8px;
     margin: 4px 8px 4px 0;
+    padding: 2px;
 }
 
 .product-table thead {
